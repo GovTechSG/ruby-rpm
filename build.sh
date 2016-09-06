@@ -1,2 +1,2 @@
 
-rpmbuild –ba ./specs/ruby-${rubyver}.spec
+rpmbuild -ba ./SPECS/ruby-${rubyver}.spec
