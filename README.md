@@ -6,10 +6,26 @@ sudo yum -y install readline libyaml libyaml-devel readline-devel ncurses ncurse
 ```
 
 # Build
+./build.sh
+
 ```
-rpmbuild –ba ./SPECS/ruby-${rubyver}.spec
+# Download the tarball
+wget ftp://ftp.ruby-lang.org/pub/ruby/${rubymajorver}/ruby-${rubyver}.tar.gz -O ./SOURCES/ruby-${rubyver}.tar.gz
+```
+```
+# It's time to build
+rpmbuild -ba ./SPECS/ruby-${rubyver}.spec
+
+# change rpmbuild working directory to current directory
+rpmbuild --define "_topdir `pwd`" -ba ./SPECS/ruby-${rubyver}.spec
 ```
 The rpm file will be generated to ./RPMS
+
+# Installation
+```
+# installation path /opt/install/rubies/
+rpm -ivh <the-name>.rpm
+```
 
 # Notes
 The rpm package may not be recognised by system and it may be replaced by older version while doing yum update (or apt-get update).

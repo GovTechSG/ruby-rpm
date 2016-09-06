@@ -32,17 +32,12 @@ files and to do system management tasks (as in Perl).  It is simple,
 straight-forward, and extensible.
 
 %prep
-#%setup -n ruby-%{rubyver}
 %setup -n ruby-%{rubyver}
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -Wall -fno-strict-aliasing"
 
-%configure \
-  --enable-shared \
-  --disable-rpath \
-  --includedir=%{_includedir}/ruby \
-  --libdir=%{_libdir}
+./configure --prefix=/opt/install/rubies/ruby-%{rubyver}
 
 make %{?_smp_mflags}
 
