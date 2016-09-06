@@ -14,7 +14,8 @@ wget ftp://ftp.ruby-lang.org/pub/ruby/${rubymajorver}/ruby-${rubyver}.tar.gz -O 
 ```
 ```
 # It's time to build
-rpmbuild -ba ./SPECS/ruby-${rubyver}.spec
+# The 2 bitflag assigned QA_RPATHS ignore the standard, invalid and empty RPATHs 
+QA_RPATHS=$[ 0x0001|0x0010 ] rpmbuild -ba ./SPECS/ruby-${rubyver}.spec
 
 # change rpmbuild working directory to current directory
 rpmbuild --define "_topdir `pwd`" -ba ./SPECS/ruby-${rubyver}.spec
