@@ -62,3 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Read them from http://svn.ruby-lang.org/repos/ruby/tags/v2_3_1/ChangeLog ;)
+- 2.3.1
