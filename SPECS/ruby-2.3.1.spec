@@ -61,4 +61,4 @@ rm -rf $RPM_BUILD_ROOT
 /opt/install/rubies/ruby-%{rubyver}
 
 %changelog
-Read from http://svn.ruby-lang.org/repos/ruby/tags/v2_3_1/ChangeLog
+* Read them from http://svn.ruby-lang.org/repos/ruby/tags/v2_3_1/ChangeLog ;)
