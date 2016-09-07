@@ -54,6 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-, root, root)
 /opt/install/rubies/ruby-%{rubyver}
+%{_bindir}/ruby
 
 %changelog
 ${CHANGE_LOG}
